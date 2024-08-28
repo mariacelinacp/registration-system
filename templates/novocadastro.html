@@ -1,0 +1,47 @@
+{% extends "base.html" %} 
+{% block title %}Novo Cadastro - Clínica Veterinária{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Novo Cadastro</h2>
+    <form class="mt-4">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="petName">Nome do pet</label>
+                <input type="text" class="form-control" id="petName" placeholder="Nome do pet">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="age">Idade</label>
+                <input type="text" class="form-control" id="age" placeholder="Idade">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="weight">Peso</label>
+                <input type="text" class="form-control" id="weight" placeholder="Peso">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="ownerName">Nome do responsável</label>
+                <input type="text" class="form-control" id="ownerName" placeholder="Nome do responsável">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="phone1">Telefone 1</label>
+                <input type="text" class="form-control" id="phone1" placeholder="Telefone 1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="phone2">E-mail</label>
+                <input type="text" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="currentDate">Data atual</label>
+                <input type="text" class="form-control" id="currentDate" placeholder="Data atual">
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-warning">CADASTRAR</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
