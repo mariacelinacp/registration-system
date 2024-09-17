@@ -4,39 +4,39 @@
 {% block content %}
 <div class="container mt-5">
     <h2 class="text-center">Novo Cadastro</h2>
-    <form class="mt-4">
+    <form method="POST" class="mt-4">
         <div class="row">
             <div class="col-md-4 mb-3">
                 <label for="petName">Nome do pet</label>
-                <input type="text" class="form-control" id="petName" placeholder="Nome do pet">
+                <input type="text" class="form-control" id="petName" name="pet_name" placeholder="Nome do pet">
             </div>
             <div class="col-md-4 mb-3">
                 <label for="age">Idade</label>
-                <input type="text" class="form-control" id="age" placeholder="Idade">
+                <input type="text" class="form-control" id="age" name="age" placeholder="Idade">
             </div>
             <div class="col-md-4 mb-3">
                 <label for="weight">Peso</label>
-                <input type="text" class="form-control" id="weight" placeholder="Peso">
+                <input type="text" class="form-control" id="weight" name="weight" placeholder="Peso">
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="ownerName">Nome do responsável</label>
-                <input type="text" class="form-control" id="ownerName" placeholder="Nome do responsável">
+                <input type="text" class="form-control" id="ownerName" name="owner_name" placeholder="Nome do responsável">
             </div>
             <div class="col-md-6 mb-3">
-                <label for="phone1">Telefone 1</label>
-                <input type="text" class="form-control" id="phone1" placeholder="Telefone 1">
+                <label for="phone">Telefone</label>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefone">
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 mb-3">
-                <label for="phone2">E-mail</label>
-                <input type="text" class="form-control" id="email" placeholder="Email">
+                <label for="email">E-mail</label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
             </div>
             <div class="col-md-6 mb-3">
                 <label for="currentDate">Data atual</label>
-                <input type="text" class="form-control" id="currentDate" placeholder="Data atual">
+                <input type="text" class="form-control" id="currentDate" name="current_date" placeholder="Data atual">
             </div>
         </div>
         <div class="text-center">

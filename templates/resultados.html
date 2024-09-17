@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Resultados da Pesquisa - Clínica Veterinária{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Resultados da Pesquisa</h2>
+    {% if resultados %}
+        <p class="text-center">Exibindo resultados para: <strong>{{ search_query }}</strong></p>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Nome do pet</th>
+                    <th>Idade</th>
+                    <th>Peso</th>
+                    <th>Nome do responsável</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Data atual</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cadastro in resultados %}
+                    <tr>
+                        <td>{{ cadastro.pet_name }}</td>
+                        <td>{{ cadastro.age }}</td>
+                        <td>{{ cadastro.weight }}</td>
+                        <td>{{ cadastro.owner_name }}</td>
+                        <td>{{ cadastro.phone }}</td>
+                        <td>{{ cadastro.email }}</td>
+                        <td>{{ cadastro.current_date }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="text-center">Nenhum resultado encontrado para "{{ search_query }}".</p>
+    {% endif %}
+</div>
+{% endblock %}
