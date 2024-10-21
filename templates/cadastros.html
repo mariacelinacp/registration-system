@@ -1,13 +1,25 @@
-{% extends "base.html" %} 
-{% block title %}Clínica Veterinária{% endblock %}
+{% extends "base.html" %}
+{% block title %}Pesquisar Cadastro - Clínica Veterinária{% endblock %}
 
 {% block content %}
-<div class="container text-center mt-5">
+<div class="container mt-5">
     <h2 class="text-center">Pesquisar Cadastro</h2>
     <form method="POST" class="mt-4">
         <div class="form-group">
-            <label for="searchQuery">Nome do pet:</label>
-            <input type="text" class="form-control" id="searchQuery" name="search_query" placeholder="Digite o nome do pet">
+            <label for="searchField">Buscar por:</label>
+            <select class="form-control" id="searchField" name="search_field">
+                <option value="pet_name">Nome do Pet</option>
+                <option value="age">Idade</option>
+                <option value="weight">Peso</option>
+                <option value="owner_name">Nome do Responsável</option>
+                <option value="phone">Telefone</option>
+                <option value="email">E-mail</option>
+                <option value="current_date">Data Atual</option>
+            </select>
+        </div>
+        <div class="form-group mt-3">
+            <label for="searchQuery">Termo de pesquisa:</label>
+            <input type="text" class="form-control" id="searchQuery" name="search_query" placeholder="Digite o termo de pesquisa">
         </div>
         <div class="text-center mt-4">
             <button type="submit" class="btn btn-primary">Pesquisar</button>

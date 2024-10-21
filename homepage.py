@@ -5,7 +5,7 @@ from models import Cadastro
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://myuser:mypassword@localhost:5432/registration_system'  # Caminho do banco de dados SQLite
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = '3SA41F56WE4W561VE6AS4T3464R6WQ1SDF12'    
+app.config['SECRET_KEY'] = '3SA41F56WE4W561VE6AS4T3464R6WQ1SDF12'  
 
 db.init_app(app)
 
@@ -20,11 +20,20 @@ def homepage():
 def cadastros():
     if request.method == 'POST':
         search_query = request.form.get('search_query')
-        if search_query:
-            # Busca no banco de dados usando o input
+        if search_query == "pet_name":
             resultados = Cadastro.query.filter(Cadastro.pet_name.ilike(f'%{search_query}%')).all()
-            if not resultados:
-                flash('Nenhum resultado encontrado.', category='info')
+        if search_query == "age":
+            resultados = Cadastro.query.filter(Cadastro.age.ilike(f'%{search_query}%')).all()
+        if search_query == "weight":
+            resultados = Cadastro.query.filter(Cadastro.weight.ilike(f'%{search_query}%')).all()
+        if search_query == "owner_name":
+            resultados = Cadastro.query.filter(Cadastro.owner_name.ilike(f'%{search_query}%')).all()
+        if search_query == "phone":
+            resultados = Cadastro.query.filter(Cadastro.phone.ilike(f'%{search_query}%')).all()
+        if search_query == "email":
+            resultados = Cadastro.query.filter(Cadastro.email.ilike(f'%{search_query}%')).all()
+        if not resultados:
+            flash('Nenhum resultado encontrado.', category='info')
             return render_template("resultados.html", resultados=resultados, search_query=search_query)
     return render_template("cadastros.html")
 
